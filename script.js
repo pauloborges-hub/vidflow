@@ -1,4 +1,5 @@
 const containerVideos = document.querySelector(".videos__container");
+const botaoCategoria = document.querySelectorAll(".superior-item");
 
 async function buscarEMostrarVideos(){
     try{
@@ -38,7 +39,7 @@ barraDePesquisa.addEventListener("input", filtrarPesquisa);
 
 function filtrarPesquisa(){
     const videos = document.querySelectorAll(".videos__item");
-
+    
     if(barraDePesquisa.value != ""){
         for(let video of videos){
             let titulo = video.querySelector(".titulo-video").textContent.toLowerCase();
@@ -51,5 +52,17 @@ function filtrarPesquisa(){
             }
 
         }
+    }
+}
+
+botaoCategoria.forEach((botao) => {
+    let nomeCategoria = botao.getAttribute("name");
+    botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
+})
+
+function filtrarPorCategoria(filtro) {
+    const videos = document.querySelectorAll(".videos__item");
+    for(let video of videos) {
+        
     }
 }
