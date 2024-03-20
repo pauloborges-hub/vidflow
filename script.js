@@ -1,5 +1,6 @@
 const containerVideos = document.querySelector('.videos__container');
-
+const barraDePesquisa = document.querySelector('.pesquisar__input');
+const videos = document.querySelectorAll('.videos__item');
 
 async function mostraVideos() {
     try {
@@ -27,5 +28,15 @@ async function mostraVideos() {
         `
     }
 }
+
+function filtrarPesquisa() {
+    if(barraDePesquisa.value != "") {
+        //código aqui
+    } else {
+        //código aqui
+    }
+}
+
+barraDePesquisa.addEventListener('input', filtrarPesquisa);
 
 mostraVideos();
